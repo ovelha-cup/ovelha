@@ -1,0 +1,2036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ovelha Cup — Apresentação de Patrocínio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F5A623;
+    --orange-deep: #E8931A;
+    --orange-fire: #FF6B00;
+    --navy: #0D0D2B;
+    --navy-mid: #1A1A3E;
+    --navy-light: #252555;
+    --gold: #FFD060;
+    --gold-light: #FFE9A0;
+    --white: #FFFFFF;
+    --off-white: #F0EDE6;
+    --gray: #8888AA;
+    --diamond: #A8EDFF;
+    --diamond-glow: #60D4FF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── PRINT BUTTON ─── */
+  .print-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: rgba(13,13,43,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--orange);
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .print-bar-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--orange);
+  }
+
+  .print-bar-logo span { color: var(--white); }
+
+  .btn-print {
+    background: linear-gradient(135deg, var(--orange), var(--orange-fire));
+    color: #fff;
+    border: none;
+    padding: 9px 26px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .btn-print:hover { transform: scale(1.04); box-shadow: 0 0 20px rgba(245,166,35,0.5); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ─── DECORATIVE ELEMENTS ─── */
+  .hex-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(60deg, transparent, transparent 40px, rgba(245,166,35,0.03) 40px, rgba(245,166,35,0.03) 41px),
+      repeating-linear-gradient(-60deg, transparent, transparent 40px, rgba(245,166,35,0.03) 40px, rgba(245,166,35,0.03) 41px);
+    pointer-events: none;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .diagonal-stripe {
+    position: absolute;
+    width: 3px;
+    height: 200%;
+    background: linear-gradient(to bottom, transparent, var(--orange), transparent);
+    transform: rotate(20deg);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  /* ─── SECTION DIVIDER ─── */
+  .divider {
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--orange), var(--gold), var(--orange), transparent);
+  }
+
+  /* ════════════════════════════════
+     CAPA
+  ════════════════════════════════ */
+  #capa {
+    background: radial-gradient(ellipse 80% 70% at 60% 40%, #1f1f50 0%, var(--navy) 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+  }
+
+  .capa-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .capa-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+
+  .capa-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(80px, 18vw, 180px);
+    line-height: 0.88;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-shadow: 0 0 80px rgba(245,166,35,0.25);
+    position: relative;
+  }
+
+  .capa-title .cup {
+    display: block;
+    color: var(--orange);
+    font-size: clamp(90px, 20vw, 200px);
+    -webkit-text-stroke: 2px var(--orange-fire);
+    text-shadow: 0 0 60px rgba(245,166,35,0.4), 0 8px 40px rgba(0,0,0,0.6);
+  }
+
+  .capa-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 600;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin: 20px 0 40px;
+    opacity: 0.85;
+  }
+
+  .capa-info {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .capa-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .capa-info-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .capa-info-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+
+  .capa-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .orb-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+  }
+
+  .orb-2 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(96,212,255,0.08) 0%, transparent 70%);
+    bottom: 0; left: -60px;
+  }
+
+  .big-circle {
+    position: absolute;
+    width: 700px; height: 700px;
+    border: 1px solid rgba(245,166,35,0.08);
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .big-circle-2 {
+    width: 900px; height: 900px;
+    border-color: rgba(245,166,35,0.04);
+  }
+
+  /* ════════════════════════════════
+     O EVENTO
+  ════════════════════════════════ */
+  #evento {
+    background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy) 60%);
+    padding: 100px 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .evento-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 2px;
+    background: var(--orange);
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 84px);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .section-title span { color: var(--orange); }
+
+  .evento-desc {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+  }
+
+  .diff-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .diff-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+  }
+
+  .diff-list li::before {
+    content: '▸';
+    color: var(--orange);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .evento-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 12px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+  }
+
+  .stat-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--orange);
+    letter-spacing: 2px;
+  }
+
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+  }
+
+  /* ════════════════════════════════
+     CATEGORIAS
+  ════════════════════════════════ */
+  #categorias {
+    background: var(--navy);
+    padding: 100px 40px;
+  }
+
+  .categorias-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cat-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .premio-total {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(245,166,35,0.15), rgba(255,208,96,0.08));
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 50px;
+    padding: 12px 32px;
+    margin-top: 20px;
+  }
+
+  .premio-total-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .premio-total-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 34px;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .cat-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .cat-card:hover {
+    border-color: rgba(245,166,35,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+  }
+
+  .cat-card-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+
+  .stripe-estreante { background: linear-gradient(90deg, #4a90e2, #7b68ee); }
+  .stripe-iniciante { background: linear-gradient(90deg, #2ecc71, #1abc9c); }
+  .stripe-intermediario { background: linear-gradient(90deg, var(--orange), var(--orange-fire)); }
+  .stripe-misto { background: linear-gradient(90deg, #e91e8c, #c0392b); }
+  .stripe-master { background: linear-gradient(90deg, var(--gold), #f39c12); }
+
+  .cat-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .cat-meta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+
+  .cat-total {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cat-total span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .podium-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .podium-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+  }
+
+  .podium-pos {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .pos-1 { color: var(--gold); }
+  .pos-2 { color: #C0C0C0; }
+  .pos-3 { color: #CD7F32; }
+  .pos-4 { color: var(--gray); }
+
+  .podium-prize {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    margin-left: auto;
+  }
+
+  .podium-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ════════════════════════════════
+     VISIBILIDADE
+  ════════════════════════════════ */
+  #visibilidade {
+    background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy) 100%);
+    padding: 100px 40px;
+  }
+
+  .visibilidade-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vis-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .vis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .vis-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vis-block-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: var(--orange);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .vis-block-title .icon {
+    width: 42px; height: 42px;
+    background: rgba(245,166,35,0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .vis-block-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .vis-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .vis-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.2s;
+  }
+
+  .vis-item:hover {
+    border-color: rgba(245,166,35,0.3);
+    background: rgba(245,166,35,0.06);
+  }
+
+  .vis-item-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-diamond { background: var(--diamond-glow); box-shadow: 0 0 10px var(--diamond-glow); }
+  .dot-ouro { background: var(--gold); box-shadow: 0 0 10px rgba(255,208,96,0.6); }
+  .dot-prata { background: #C0C0C0; }
+  .dot-bronze { background: #CD7F32; }
+
+  .vis-item-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .vis-item-cota {
+    margin-left: auto;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+
+  .cota-label-diamond { background: rgba(96,212,255,0.15); color: var(--diamond-glow); border: 1px solid rgba(96,212,255,0.3); }
+  .cota-label-ouro { background: rgba(255,208,96,0.15); color: var(--gold); border: 1px solid rgba(255,208,96,0.3); }
+  .cota-label-prata { background: rgba(192,192,192,0.15); color: #C0C0C0; border: 1px solid rgba(192,192,192,0.3); }
+  .cota-label-bronze { background: rgba(205,127,50,0.15); color: #CD7F32; border: 1px solid rgba(205,127,50,0.3); }
+
+  /* ════════════════════════════════
+     COTAS
+  ════════════════════════════════ */
+  #cotas {
+    background: var(--navy);
+    padding: 100px 40px;
+  }
+
+  .cotas-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cotas-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .cotas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .cota-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .cota-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 64px rgba(0,0,0,0.6);
+  }
+
+  .cota-card.featured {
+    transform: translateY(-12px);
+  }
+
+  .cota-card.featured:hover {
+    transform: translateY(-18px);
+  }
+
+  .cota-head {
+    padding: 28px 24px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .cota-head-diamond { background: linear-gradient(160deg, #0a1a2e, #0d2040); border-bottom: 2px solid var(--diamond-glow); }
+  .cota-head-ouro { background: linear-gradient(160deg, #2a1a00, #3d2800); border-bottom: 2px solid var(--gold); }
+  .cota-head-prata { background: linear-gradient(160deg, #1a1a2a, #252535); border-bottom: 2px solid #C0C0C0; }
+  .cota-head-bronze { background: linear-gradient(160deg, #1a0f00, #261500); border-bottom: 2px solid #CD7F32; }
+
+  .cota-card-body-diamond { background: rgba(10,26,46,0.95); border: 1px solid rgba(96,212,255,0.2); border-top: none; }
+  .cota-card-body-ouro { background: rgba(42,26,0,0.95); border: 1px solid rgba(255,208,96,0.2); border-top: none; }
+  .cota-card-body-prata { background: rgba(26,26,42,0.95); border: 1px solid rgba(192,192,192,0.15); border-top: none; }
+  .cota-card-body-bronze { background: rgba(26,15,0,0.95); border: 1px solid rgba(205,127,50,0.15); border-top: none; }
+
+  .cota-gem {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .cota-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+
+  .title-diamond { color: var(--diamond); text-shadow: 0 0 20px rgba(96,212,255,0.5); }
+  .title-ouro { color: var(--gold); text-shadow: 0 0 20px rgba(255,208,96,0.5); }
+  .title-prata { color: #D0D0D0; }
+  .title-bronze { color: #CD7F32; }
+
+  .cota-badge-featured {
+    display: inline-block;
+    background: var(--diamond-glow);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .cota-price {
+    margin-top: 16px;
+    padding: 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+  }
+
+  .cota-price-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+
+  .cota-price-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+  }
+
+  .cota-card-body {
+    padding: 24px;
+  }
+
+  .benefit-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.4;
+  }
+
+  .benefit-row:last-child { border-bottom: none; }
+
+  .check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+  }
+
+  .check-yes-diamond { background: rgba(96,212,255,0.2); color: var(--diamond-glow); border: 1px solid rgba(96,212,255,0.4); }
+  .check-yes-ouro { background: rgba(255,208,96,0.2); color: var(--gold); border: 1px solid rgba(255,208,96,0.4); }
+  .check-yes-prata { background: rgba(192,192,192,0.2); color: #C0C0C0; border: 1px solid rgba(192,192,192,0.4); }
+  .check-yes-bronze { background: rgba(205,127,50,0.2); color: #CD7F32; border: 1px solid rgba(205,127,50,0.4); }
+  .check-no { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.08); }
+
+  .benefit-row.inactive { opacity: 0.35; }
+
+  /* ════════════════════════════════
+     CONTATO
+  ════════════════════════════════ */
+  #contato {
+    background: radial-gradient(ellipse 90% 80% at 50% 100%, #1f1f50 0%, var(--navy) 60%);
+    padding: 120px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contato-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .contato-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 4px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .contato-title span { color: var(--orange); }
+
+  .contato-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 20px auto 56px;
+  }
+
+  .contato-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .contato-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 12px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .contato-card:hover {
+    border-color: var(--orange);
+    background: rgba(245,166,35,0.08);
+    transform: translateY(-2px);
+  }
+
+  .contato-card-icon {
+    width: 44px; height: 44px;
+    background: rgba(245,166,35,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contato-card-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 3px;
+  }
+
+  .contato-card-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .footer-logos {
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .footer-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-logo-text span { color: var(--orange); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes floatUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: translate(-50%,-50%) scale(0.95); opacity: 0.6; }
+    50% { transform: translate(-50%,-50%) scale(1.05); opacity: 0.2; }
+    100% { transform: translate(-50%,-50%) scale(0.95); opacity: 0.6; }
+  }
+
+  .capa-inner > * {
+    animation: floatUp 0.8s ease both;
+  }
+
+  .capa-badge { animation-delay: 0.1s; }
+  .capa-title { animation-delay: 0.25s; }
+  .capa-subtitle { animation-delay: 0.4s; }
+  .capa-info { animation-delay: 0.55s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .evento-inner { grid-template-columns: 1fr; gap: 50px; }
+    .vis-grid { grid-template-columns: 1fr; }
+    .cotas-grid { grid-template-columns: repeat(2, 1fr); }
+    .cota-card.featured { transform: none; }
+    .contato-cards { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    section { min-height: auto; }
+    .cotas-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .print-bar { flex-wrap: wrap; gap: 8px; }
+    .evento-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ─── CAPA FOTO ─── */
+  .capa-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('fotos/ALÉM DO LANCE-502.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  /* ─── ORGANIZADOR ─── */
+  #organizador {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+    padding: 100px 40px;
+  }
+
+  .organizador-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .org-photo-wrap {
+    position: relative;
+  }
+
+  .org-photo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(135deg, var(--orange), var(--gold), var(--orange-fire));
+    border-radius: 20px;
+    z-index: 0;
+  }
+
+  .org-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 18px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: contrast(1.05) saturate(1.1);
+  }
+
+  .org-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: rgba(13,13,43,0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 10px;
+    padding: 12px 20px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .org-badge-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--orange);
+  }
+
+  .org-badge-role {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .org-info { display: flex; flex-direction: column; gap: 20px; }
+
+  .org-credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .org-cred-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,166,35,0.15);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .org-cred-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .org-cred-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+  }
+
+  .org-title-highlight {
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── PERSONALIDADES ─── */
+  #personalidades {
+    background: var(--navy-mid);
+    padding: 100px 40px;
+  }
+
+  .personalidades-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .pers-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .pers-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.55);
+    max-width: 600px;
+    margin: 12px auto 0;
+    line-height: 1.6;
+  }
+
+  .pers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .pers-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    group: true;
+  }
+
+  .pers-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+    filter: brightness(0.85) contrast(1.05);
+  }
+
+  .pers-card:hover img {
+    transform: scale(1.07);
+    filter: brightness(0.7) contrast(1.1);
+  }
+
+  .pers-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,13,43,0.95) 0%, rgba(13,13,43,0.3) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .pers-card-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--white);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  }
+
+  .pers-card-label span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 2px;
+  }
+
+  .pers-card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+    pointer-events: none;
+  }
+
+  .pers-card:hover .pers-card-border {
+    border-color: var(--orange);
+  }
+
+  /* ─── ACTION STRIP ─── */
+  .action-strip {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-strip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.55) contrast(1.1) saturate(1.2);
+  }
+
+  .action-strip-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(13,13,43,0.85) 0%, transparent 50%, rgba(13,13,43,0.85) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .action-strip-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    letter-spacing: 6px;
+    color: var(--white);
+    text-align: center;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+  }
+
+  .action-strip-text span { color: var(--orange); }
+
+  /* ─── PRINT ─── */
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--navy) !important;
+    }
+
+    .print-bar { display: none !important; }
+
+    section,
+    .action-strip,
+    #investimento > div {
+      display: block !important;
+      width: 100% !important;
+      min-height: 0 !important;
+      height: auto !important;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+      break-before: page;
+      break-after: page;
+      break-inside: avoid;
+      padding: 60px 80px !important;
+      box-sizing: border-box;
+    }
+
+    section:first-of-type { page-break-before: avoid; break-before: avoid; }
+
+    .action-strip {
+      height: 300px !important;
+      padding: 0 !important;
+    }
+
+    .divider { display: none !important; }
+  }
+
+  @media (max-width: 900px) {
+    .organizador-inner { grid-template-columns: 1fr; }
+    .org-photo-wrap { max-width: 360px; margin: 0 auto; }
+    .pers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 600px) {
+    .pers-grid { grid-template-columns: repeat(2, 1fr); }
+    .org-credentials { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRINT BAR -->
+<div class="print-bar">
+  <div class="print-bar-logo">OVELHA <span>CUP</span></div>
+  <button class="btn-print" onclick="printDoc()">⬇ Exportar PDF</button>
+  <script>
+    function printDoc() {
+      const tip = document.getElementById('print-tip');
+      tip.style.display = 'flex';
+      setTimeout(() => window.print(), 400);
+      window.onafterprint = () => tip.style.display = 'none';
+    }
+  </script>
+  <div id="print-tip" style="display:none;align-items:center;gap:10px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.4);border-radius:6px;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;color:rgba(255,255,255,0.8)">
+    <span style="font-size:16px">💡</span>
+    No Chrome: <strong style="color:var(--orange)">Mais configurações → Gráficos de fundo: ativar</strong> · Margens: <strong style="color:var(--orange)">Nenhuma</strong> · Orientação: <strong style="color:var(--orange)">Paisagem</strong>
+  </div>
+</div>
+
+<!-- ════ CAPA ════ -->
+<section id="capa">
+  <div class="capa-photo-bg"></div>
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+  <div class="capa-orb orb-1"></div>
+  <div class="capa-orb orb-2"></div>
+  <div class="big-circle"></div>
+  <div class="big-circle big-circle-2"></div>
+  <div class="diagonal-stripe" style="left:10%"></div>
+  <div class="diagonal-stripe" style="right:8%"></div>
+
+  <div class="capa-inner">
+    <div class="capa-badge">Apresentação de Patrocínio · 2024</div>
+    <h1 class="capa-title">
+      OVELHA
+      <span class="cup">CUP</span>
+    </h1>
+    <p class="capa-subtitle">Campeonato de Futevôlei</p>
+    <div class="capa-info">
+      <div class="capa-info-item">
+        <span class="capa-info-label">Data</span>
+        <span class="capa-info-value">Novembro 2024</span>
+      </div>
+      <div class="capa-info-item">
+        <span class="capa-info-label">Local</span>
+        <span class="capa-info-value">Cinelândia</span>
+      </div>
+      <div class="capa-info-item">
+        <span class="capa-info-label">Organização</span>
+        <span class="capa-info-value">Ovelha FTV</span>
+      </div>
+      <div class="capa-info-item">
+        <span class="capa-info-label">Premiação</span>
+        <span class="capa-info-value">R$ 5.000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ O EVENTO ════ -->
+<section id="evento">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+  <div class="diagonal-stripe" style="right:5%"></div>
+
+  <div class="evento-inner">
+    <div>
+      <div class="section-tag">Sobre o Evento</div>
+      <h2 class="section-title">O <span>Evento</span></h2>
+      <p class="evento-desc">
+        O Ovelha Cup é um campeonato de futevôlei que reúne atletas de diversas categorias em um ambiente de alta competitividade, energia e paixão pelo esporte. Com transmissão ao vivo, cobertura completa de mídia, área do atleta estruturada e premiação em dinheiro, o evento oferece uma experiência única para atletas e público.
+      </p>
+      <ul class="diff-list">
+        <li>Transmissão <strong>AO VIVO</strong> no sábado e domingo pelo YouTube</li>
+        <li>Cobertura de fotografia e mídia em tempo real durante todo o evento</li>
+        <li>Área do Atleta completa com fisioterapia, água, frutas e suplementos</li>
+        <li>Uniforme completo para todos os atletas participantes</li>
+        <li>Ativação de patrocinadores com estratégia de marketing para gerar valor através de experiências únicas com o público</li>
+      </ul>
+    </div>
+
+    <div class="evento-stats">
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Categorias</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">80+</div>
+        <div class="stat-label">Duplas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Dias de Evento</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color:var(--gold)">R$5K</div>
+        <div class="stat-label">Em Prêmios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ ORGANIZADOR ════ -->
+<section id="organizador">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+  <div class="diagonal-stripe" style="left:5%"></div>
+
+  <div class="organizador-inner">
+    <div class="org-photo-wrap">
+      <img class="org-photo" src="fotos/3H6A1268.jpg" alt="Ovelha FTV">
+      <div class="org-badge">
+        <div class="org-badge-name">David "Ovelha" Soares</div>
+        <div class="org-badge-role">Organizador · Ovelha FTV</div>
+      </div>
+    </div>
+
+    <div class="org-info">
+      <div class="section-tag">Quem Organiza</div>
+      <h2 class="section-title">O <span class="org-title-highlight">Atleta</span> por<br>Trás do Evento</h2>
+      <p class="evento-desc">
+        David Soares, o "Ovelha", é um dos atletas mais respeitados do futevôlei nacional. Com 15 anos de carreira, professor de futevôlei (CREF 158419-G/SP) e pós-graduado em Fisiologia do Exercício, ele une experiência competitiva de alto nível com profundo conhecimento técnico para criar eventos de excelência.
+      </p>
+      <div class="org-credentials">
+        <div class="org-cred-item">
+          <div class="org-cred-number">5x</div>
+          <div class="org-cred-label">Campeão Brasileiro</div>
+        </div>
+        <div class="org-cred-item">
+          <div class="org-cred-number">3x</div>
+          <div class="org-cred-label">Campeão Mundial</div>
+        </div>
+        <div class="org-cred-item">
+          <div class="org-cred-number">15</div>
+          <div class="org-cred-label">Anos de Carreira</div>
+        </div>
+        <div class="org-cred-item">
+          <div class="org-cred-number">3K+</div>
+          <div class="org-cred-label">Alunos Formados</div>
+        </div>
+        <div class="org-cred-item">
+          <div class="org-cred-number">100+</div>
+          <div class="org-cred-label">Clínicas no Brasil</div>
+        </div>
+        <div class="org-cred-item">
+          <div class="org-cred-number">83K</div>
+          <div class="org-cred-label">Seguidores</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ ACTION STRIP ════ -->
+<div class="action-strip">
+  <img src="fotos/6Q5A1017.jpg" alt="Ovelha em ação">
+  <div class="action-strip-overlay">
+    <div class="action-strip-text">PAIXÃO.<br><span>ALTO NÍVEL.</span><br>FUTEVÔLEI.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════ PERSONALIDADES ════ -->
+<section id="personalidades">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+
+  <div class="personalidades-inner">
+    <div class="pers-header">
+      <div class="section-tag" style="justify-content:center">Prestígio & Conexões</div>
+      <h2 class="section-title">Personalidades <span>&amp; Famosos</span></h2>
+      <p class="pers-sub">Ovelha circula entre os maiores nomes do esporte e do entretenimento, ampliando o alcance e o prestígio do evento.</p>
+    </div>
+
+    <div class="pers-grid">
+      <div class="pers-card">
+        <img src="fotos/Ronaldinho .jpg" alt="Com Ronaldinho">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Ao lado de</span>Ronaldinho Gaúcho</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/Denilson.jpg" alt="Com Denilson">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Ao lado de</span>Denilson</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/Fred .jpg" alt="Com Fred">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Ao lado de</span>Romário</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/Talisca e Dante .jpg" alt="Com Talisca e Dante">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Ao lado de</span>Talisca &amp; Dante</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/Henrique .jpg" alt="Clínica">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Clínicas</span>Em todo o Brasil</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/3H6A1163.jpg" alt="Competição">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Atleta</span>Alta Performance</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/3H6A1606.jpg" alt="Em ação">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Em campo</span>Explosão &amp; Técnica</div>
+        <div class="pers-card-border"></div>
+      </div>
+      <div class="pers-card">
+        <img src="fotos/IMG_5177.jpg" alt="Com Romário">
+        <div class="pers-card-overlay"></div>
+        <div class="pers-card-label"><span>Ao lado de</span>Fred</div>
+        <div class="pers-card-border"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ CATEGORIAS ════ -->
+<section id="categorias">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+
+  <div class="categorias-inner">
+    <div class="cat-header">
+      <div class="section-tag" style="justify-content:center">Estrutura Competitiva</div>
+      <h2 class="section-title">Categorias & <span>Premiação</span></h2>
+      <div class="premio-total">
+        <span class="premio-total-label">Premiação total</span>
+        <span class="premio-total-value">R$ 5.000</span>
+      </div>
+    </div>
+
+    <div class="cat-grid">
+
+      <!-- ESTREANTE -->
+      <div class="cat-card">
+        <div class="cat-card-stripe stripe-estreante"></div>
+        <div class="cat-name">Estreante</div>
+        <div class="cat-meta">Masculino · 16 Duplas</div>
+        <div class="cat-total">Premiação total <span>R$ 700</span></div>
+        <ul class="podium-list">
+          <li class="podium-item">
+            <span class="podium-pos pos-1">1°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 400</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-2">2°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 200</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-3">3°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 100</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- INICIANTE -->
+      <div class="cat-card">
+        <div class="cat-card-stripe stripe-iniciante"></div>
+        <div class="cat-name">Iniciante</div>
+        <div class="cat-meta">Masc. & Fem. · 16 Duplas/Cat.</div>
+        <div class="cat-total">Premiação total <span>R$ 1.000</span></div>
+        <ul class="podium-list">
+          <li class="podium-item">
+            <span class="podium-pos pos-1">1°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 500</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-2">2°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 300</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-3">3°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 200</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- INTERMEDIÁRIO -->
+      <div class="cat-card">
+        <div class="cat-card-stripe stripe-intermediario"></div>
+        <div class="cat-name">Intermediário</div>
+        <div class="cat-meta">B + C · 16 Duplas/Cat.</div>
+        <div class="cat-total">Premiação total <span>R$ 1.500</span></div>
+        <ul class="podium-list">
+          <li class="podium-item">
+            <span class="podium-pos pos-1">1°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 800</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-2">2°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 400</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-3">3°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 200</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-4">4°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 100</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- MISTO B -->
+      <div class="cat-card">
+        <div class="cat-card-stripe stripe-misto"></div>
+        <div class="cat-name">Misto B</div>
+        <div class="cat-meta">Misto · 16 Duplas</div>
+        <div class="cat-total">Premiação total <span>R$ 800</span></div>
+        <ul class="podium-list">
+          <li class="podium-item">
+            <span class="podium-pos pos-1">1°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 400</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-2">2°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 250</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-3">3°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 150</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- MASTER -->
+      <div class="cat-card">
+        <div class="cat-card-stripe stripe-master"></div>
+        <div class="cat-name">Master</div>
+        <div class="cat-meta">Masculino · 16 Duplas</div>
+        <div class="cat-total">Premiação total <span>R$ 1.000</span></div>
+        <ul class="podium-list">
+          <li class="podium-item">
+            <span class="podium-pos pos-1">1°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 600</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-2">2°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 300</span>
+          </li>
+          <li class="podium-item">
+            <span class="podium-pos pos-3">3°</span>
+            <span class="podium-label">Lugar</span>
+            <span class="podium-prize">R$ 100</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ ACTION STRIP 2 ════ -->
+<div class="action-strip" style="height:320px">
+  <img src="fotos/ALÉM DO LANCE-502.jpg" alt="Ovelha em ação" style="object-position: center 15%">
+  <div class="action-strip-overlay">
+    <div class="action-strip-text" style="font-size:clamp(32px,5vw,64px)">SUA MARCA ONDE<br><span>O ESPORTE ACONTECE</span></div>
+  </div>
+</div>
+
+<!-- ════ VISIBILIDADE ════ -->
+<section id="visibilidade">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+
+  <div class="visibilidade-inner">
+    <div class="vis-header">
+      <div class="section-tag" style="justify-content:center">Exposição de Marca</div>
+      <h2 class="section-title">Visibilidade da <span>Sua Marca</span></h2>
+    </div>
+
+    <div class="vis-grid">
+
+      <div class="vis-block">
+        <div class="vis-block-title">
+          <div class="icon">👕</div>
+          Uniformes
+        </div>
+        <div class="vis-block-sub">Aplicação por cota nos uniformes dos atletas</div>
+        <ul class="vis-items">
+          <li class="vis-item">
+            <span class="vis-item-dot dot-ouro"></span>
+            <span class="vis-item-text">Logo na <strong>frente</strong> da camisa</span>
+            <span class="vis-item-cota cota-label-ouro">Ouro</span>
+          </li>
+          <li class="vis-item">
+            <span class="vis-item-dot dot-diamond"></span>
+            <span class="vis-item-text">Logo <strong>atrás (parte de cima)</strong> da camisa</span>
+            <span class="vis-item-cota cota-label-diamond">Diamante</span>
+          </li>
+          <li class="vis-item">
+            <span class="vis-item-dot dot-prata"></span>
+            <span class="vis-item-text">Logo <strong>atrás (parte de baixo)</strong> da camisa</span>
+            <span class="vis-item-cota cota-label-prata">Prata</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vis-block">
+        <div class="vis-block-title">
+          <div class="icon">🏆</div>
+          Backdrops
+        </div>
+        <div class="vis-block-sub">Aplicação nos backdrops de entrevista e pódio</div>
+        <ul class="vis-items">
+          <li class="vis-item">
+            <span class="vis-item-dot dot-diamond"></span>
+            <span class="vis-item-text">Posição de destaque no backdrop do <strong>pódio</strong></span>
+            <span class="vis-item-cota cota-label-diamond">Diamante</span>
+          </li>
+          <li class="vis-item">
+            <span class="vis-item-dot dot-ouro"></span>
+            <span class="vis-item-text">Posição privilegiada no backdrop do <strong>pódio</strong></span>
+            <span class="vis-item-cota cota-label-ouro">Ouro</span>
+          </li>
+          <li class="vis-item">
+            <span class="vis-item-dot dot-prata"></span>
+            <span class="vis-item-text">Logo no backdrop de <strong>entrevista</strong></span>
+            <span class="vis-item-cota cota-label-prata">Prata</span>
+          </li>
+          <li class="vis-item">
+            <span class="vis-item-dot dot-bronze"></span>
+            <span class="vis-item-text">Logo no backdrop (posição inferior)</span>
+            <span class="vis-item-cota cota-label-bronze">Bronze</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ INVESTIMENTO ════ -->
+<section id="investimento">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:100px 0;position:relative;z-index:2;">
+    <div style="text-align:center;margin-bottom:60px">
+      <div class="section-tag" style="justify-content:center">Transparência</div>
+      <h2 class="section-title">Investimento do <span>Evento</span></h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);margin-top:12px">Estrutura de custos para a realização do Ovelha Cup</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+
+      <!-- Lista de despesas -->
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden">
+        <div style="padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(245,166,35,0.06)">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:var(--orange)">Estrutura de Custos</span>
+        </div>
+        <div style="padding:8px 0">
+
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🏆</span> Premiação em dinheiro</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 5.000</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">👕</span> Uniformes para atletas</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:rgba(255,255,255,0.4);font-style:italic">A calcular</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">⚖️</span> Arbitragem</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 1.500</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📸</span> Fotografia & Mídia</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🩺</span> Fisioterapia</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📢</span> Marketing</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📺</span> Transmissão ao vivo</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.500</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🍎</span> Frutas para atletas</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 250</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px">
+            <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">💧</span> Água para atletas</span>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 1.000</span>
+          </div>
+
+          <!-- Total -->
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:rgba(245,166,35,0.08);border-top:2px solid rgba(245,166,35,0.3);margin-top:4px">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white)">TOTAL ESTIMADO</span>
+            <div style="text-align:right">
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:2px;line-height:1">R$ 18.250</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;margin-top:2px">+ uniformes a calcular</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lado direito: destaque visual -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="background:linear-gradient(135deg,rgba(245,166,35,0.12),rgba(255,208,96,0.06));border:1px solid rgba(245,166,35,0.3);border-radius:16px;padding:32px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;letter-spacing:2px">R$ 18.250</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px">Investimento total estimado</div>
+          <div style="width:40px;height:2px;background:var(--orange);margin:20px 0"></div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Cada real investido garante uma experiência completa ao atleta e máxima exposição para os patrocinadores — do uniforme à transmissão ao vivo.</p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:16px">📍 Local do Evento</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--orange);letter-spacing:1px">Cinelândia</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.45);margin-top:4px">Aracaju — Sergipe</div>
+          <div style="width:40px;height:2px;background:rgba(245,166,35,0.3);margin:16px 0"></div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6">Espaço estratégico com estrutura completa para receber atletas, público e toda a produção do evento.</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:16px">📅 Data</div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--orange);letter-spacing:1px">Novembro 2024</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.45);margin-top:4px">Data exata a confirmar</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ COTAS ════ -->
+<section id="cotas">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+
+  <div class="cotas-inner">
+    <div class="cotas-header">
+      <div class="section-tag" style="justify-content:center">Seja um Parceiro</div>
+      <h2 class="section-title">Cotas de <span>Patrocínio</span></h2>
+    </div>
+
+    <div class="cotas-grid">
+
+      <!-- DIAMANTE -->
+      <div class="cota-card featured">
+        <div class="cota-head cota-head-diamond">
+          <span class="cota-gem">💎</span>
+          <div class="cota-badge-featured">Mais Completo</div>
+          <div class="cota-title title-diamond">Diamante</div>
+          <div class="cota-price">
+            <div class="cota-price-label">Investimento</div>
+            <div class="cota-price-value">A DEFINIR</div>
+          </div>
+        </div>
+        <div class="cota-card-body cota-card-body-diamond">
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo na frente da camisa</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo atrás da camisa (cima)</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo no backdrop do pódio (destaque)</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo no backdrop de entrevista</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Presença em materiais de mídia</div>
+        </div>
+      </div>
+
+      <!-- OURO -->
+      <div class="cota-card">
+        <div class="cota-head cota-head-ouro">
+          <span class="cota-gem">🥇</span>
+          <div style="height:22px"></div>
+          <div class="cota-title title-ouro">Ouro</div>
+          <div class="cota-price">
+            <div class="cota-price-label">Investimento</div>
+            <div class="cota-price-value">A DEFINIR</div>
+          </div>
+        </div>
+        <div class="cota-card-body cota-card-body-ouro">
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo na frente da camisa</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (cima)</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop do pódio</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop de entrevista</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Presença em materiais de mídia</div>
+        </div>
+      </div>
+
+      <!-- PRATA -->
+      <div class="cota-card">
+        <div class="cota-head cota-head-prata">
+          <span class="cota-gem">🥈</span>
+          <div style="height:22px"></div>
+          <div class="cota-title title-prata">Prata</div>
+          <div class="cota-price">
+            <div class="cota-price-label">Investimento</div>
+            <div class="cota-price-value">A DEFINIR</div>
+          </div>
+        </div>
+        <div class="cota-card-body cota-card-body-prata">
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo na frente da camisa</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (cima)</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Logo no backdrop do pódio</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Logo no backdrop de entrevista</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-prata">✓</div> Presença em materiais de mídia</div>
+        </div>
+      </div>
+
+      <!-- BRONZE -->
+      <div class="cota-card">
+        <div class="cota-head cota-head-bronze">
+          <span class="cota-gem">🥉</span>
+          <div style="height:22px"></div>
+          <div class="cota-title title-bronze">Bronze</div>
+          <div class="cota-price">
+            <div class="cota-price-label">Investimento</div>
+            <div class="cota-price-value">A DEFINIR</div>
+          </div>
+        </div>
+        <div class="cota-card-body cota-card-body-bronze">
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo na frente da camisa</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (cima)</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo no backdrop do pódio (destaque)</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Logo no backdrop (posição inferior)</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Presença em materiais de mídia</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════ CONTATO ════ -->
+<section id="contato">
+  <div class="hex-bg"></div>
+  <div class="noise"></div>
+  <div class="capa-orb orb-1" style="opacity:0.5"></div>
+
+  <div class="contato-inner">
+    <div style="margin-bottom:36px">
+      <img src="fotos/3H6A1268.jpg" alt="Ovelha FTV"
+        style="width:100px;height:100px;object-fit:cover;object-position:top center;border-radius:50%;border:3px solid var(--orange);box-shadow:0 0 30px rgba(245,166,35,0.4);margin:0 auto;display:block">
+    </div>
+    <div class="section-tag" style="justify-content:center">Seja um Parceiro</div>
+    <h2 class="contato-title">
+      VAMOS<br><span>JUNTOS?</span>
+    </h2>
+    <p class="contato-sub">
+      Seja parceiro do Ovelha Cup e associe sua marca a um evento esportivo de alto impacto, com transmissão ao vivo, público apaixonado e cobertura completa de mídia.
+    </p>
+
+    <div class="contato-cards">
+      <a class="contato-card" href="tel:+5579991910833">
+        <div class="contato-card-icon">📞</div>
+        <div>
+          <div class="contato-card-label">Telefone / WhatsApp</div>
+          <div class="contato-card-value">(79) 99191-0833</div>
+        </div>
+      </a>
+      <a class="contato-card" href="https://instagram.com/ovelhaftv" target="_blank">
+        <div class="contato-card-icon">📸</div>
+        <div>
+          <div class="contato-card-label">Instagram</div>
+          <div class="contato-card-value">@OVELHATV</div>
+        </div>
+      </a>
+      <a class="contato-card" href="mailto:ovelha.ftv@hotmail.com">
+        <div class="contato-card-icon">✉️</div>
+        <div>
+          <div class="contato-card-label">E-mail</div>
+          <div class="contato-card-value">ovelha.ftv@hotmail.com</div>
+        </div>
+      </a>
+      <div class="contato-card">
+        <div class="contato-card-icon">📍</div>
+        <div>
+          <div class="contato-card-label">Local do Evento</div>
+          <div class="contato-card-value">Cinelândia — Aracaju/SE</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-logos">
+      <div class="footer-logo-text">OVELHA <span>CUP</span></div>
+      <div style="width:1px;height:30px;background:rgba(255,255,255,0.15)"></div>
+      <div class="footer-logo-text">OVELHA <span>FUTEVÔLEI</span></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
