@@ -1285,6 +1285,32 @@
     .pers-grid { grid-template-columns: repeat(2, 1fr); }
     .org-credentials { grid-template-columns: 1fr 1fr; }
   }
+
+  .inv-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 769px) {
+    .inv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .inv-inner { padding: 60px 20px !important; }
+    .inv-row { padding: 12px 16px !important; }
+    .inv-header { padding: 16px !important; }
+    .inv-body { padding: 4px 0 !important; }
+    .inv-total { padding: 16px !important; }
+    .inv-highlight { padding: 24px !important; }
+    .inv-highlight-value { font-size: 40px !important; }
+    .inv-card { padding: 20px !important; }
+  }
 </style>
 </head>
 <body>
@@ -1485,7 +1511,7 @@
       <div class="pers-card">
         <img src="fotos/Fred .jpg" alt="Com Fred">
         <div class="pers-card-overlay"></div>
-        <div class="pers-card-label"><span>Ao lado de</span>Romário</div>
+        <div class="pers-card-label"><span>Ao lado de</span>Fred</div>
         <div class="pers-card-border"></div>
       </div>
       <div class="pers-card">
@@ -1515,7 +1541,7 @@
       <div class="pers-card">
         <img src="fotos/IMG_5177.jpg" alt="Com Romário">
         <div class="pers-card-overlay"></div>
-        <div class="pers-card-label"><span>Ao lado de</span>Fred</div>
+        <div class="pers-card-label"><span>Ao lado de</span>Romário</div>
         <div class="pers-card-border"></div>
       </div>
     </div>
@@ -1541,30 +1567,6 @@
 
     <div class="cat-grid">
 
-      <!-- ESTREANTE -->
-      <div class="cat-card">
-        <div class="cat-card-stripe stripe-estreante"></div>
-        <div class="cat-name">Estreante</div>
-        <div class="cat-meta">Masculino · 16 Duplas</div>
-        <div class="cat-total">Premiação total <span>R$ 700</span></div>
-        <ul class="podium-list">
-          <li class="podium-item">
-            <span class="podium-pos pos-1">1°</span>
-            <span class="podium-label">Lugar</span>
-            <span class="podium-prize">R$ 400</span>
-          </li>
-          <li class="podium-item">
-            <span class="podium-pos pos-2">2°</span>
-            <span class="podium-label">Lugar</span>
-            <span class="podium-prize">R$ 200</span>
-          </li>
-          <li class="podium-item">
-            <span class="podium-pos pos-3">3°</span>
-            <span class="podium-label">Lugar</span>
-            <span class="podium-prize">R$ 100</span>
-          </li>
-        </ul>
-      </div>
 
       <!-- INICIANTE -->
       <div class="cat-card">
@@ -1764,61 +1766,61 @@
   <div class="hex-bg"></div>
   <div class="noise"></div>
 
-  <div style="max-width:1100px;margin:0 auto;padding:100px 0;position:relative;z-index:2;">
+  <div class="inv-inner" style="max-width:1100px;margin:0 auto;padding:100px 0;position:relative;z-index:2;">
     <div style="text-align:center;margin-bottom:60px">
       <div class="section-tag" style="justify-content:center">Transparência</div>
       <h2 class="section-title">Investimento do <span>Evento</span></h2>
       <p style="font-size:16px;color:rgba(255,255,255,0.5);margin-top:12px">Estrutura de custos para a realização do Ovelha Cup</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+    <div class="inv-grid">
 
       <!-- Lista de despesas -->
       <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden">
-        <div style="padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(245,166,35,0.06)">
+        <div class="inv-header" style="padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(245,166,35,0.06)">
           <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:var(--orange)">Estrutura de Custos</span>
         </div>
-        <div style="padding:8px 0">
+        <div class="inv-body" style="padding:8px 0">
 
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🏆</span> Premiação em dinheiro</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 5.000</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">👕</span> Uniformes para atletas</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:rgba(255,255,255,0.4);font-style:italic">A calcular</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">⚖️</span> Arbitragem</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 1.500</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📸</span> Fotografia & Mídia</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🩺</span> Fisioterapia</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📢</span> Marketing</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.000</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">📺</span> Transmissão ao vivo</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 2.500</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid rgba(255,255,255,0.04)">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">🍎</span> Frutas para atletas</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 250</span>
           </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px">
+          <div class="inv-row" style="display:flex;justify-content:space-between;align-items:center;padding:14px 28px">
             <span style="font-size:15px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:10px"><span style="color:var(--orange)">💧</span> Água para atletas</span>
             <span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--white)">R$ 1.000</span>
           </div>
 
           <!-- Total -->
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:rgba(245,166,35,0.08);border-top:2px solid rgba(245,166,35,0.3);margin-top:4px">
+          <div class="inv-total" style="display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:rgba(245,166,35,0.08);border-top:2px solid rgba(245,166,35,0.3);margin-top:4px">
             <span style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white)">TOTAL ESTIMADO</span>
             <div style="text-align:right">
               <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--gold);letter-spacing:2px;line-height:1">R$ 18.250</div>
@@ -1831,14 +1833,14 @@
 
       <!-- Lado direito: destaque visual -->
       <div style="display:flex;flex-direction:column;gap:20px">
-        <div style="background:linear-gradient(135deg,rgba(245,166,35,0.12),rgba(255,208,96,0.06));border:1px solid rgba(245,166,35,0.3);border-radius:16px;padding:32px">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;letter-spacing:2px">R$ 18.250</div>
+        <div class="inv-highlight" style="background:linear-gradient(135deg,rgba(245,166,35,0.12),rgba(255,208,96,0.06));border:1px solid rgba(245,166,35,0.3);border-radius:16px;padding:32px">
+          <div class="inv-highlight-value" style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;letter-spacing:2px">R$ 18.250</div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px">Investimento total estimado</div>
           <div style="width:40px;height:2px;background:var(--orange);margin:20px 0"></div>
           <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7">Cada real investido garante uma experiência completa ao atleta e máxima exposição para os patrocinadores — do uniforme à transmissão ao vivo.</p>
         </div>
 
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
+        <div class="inv-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:16px">📍 Local do Evento</div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--orange);letter-spacing:1px">Cinelândia</div>
           <div style="font-size:14px;color:rgba(255,255,255,0.45);margin-top:4px">Aracaju — Sergipe</div>
@@ -1846,7 +1848,7 @@
           <div style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6">Espaço estratégico com estrutura completa para receber atletas, público e toda a produção do evento.</div>
         </div>
 
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
+        <div class="inv-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:16px">📅 Data</div>
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:800;color:var(--orange);letter-spacing:1px">Novembro 2024</div>
           <div style="font-size:14px;color:rgba(255,255,255,0.45);margin-top:4px">Data exata a confirmar</div>
