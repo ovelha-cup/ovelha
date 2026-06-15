@@ -1289,23 +1289,6 @@
 </head>
 <body>
 
-<!-- PRINT BAR -->
-<div class="print-bar">
-  <div class="print-bar-logo">OVELHA <span>CUP</span></div>
-  <button class="btn-print" onclick="printDoc()">⬇ Exportar PDF</button>
-  <script>
-    function printDoc() {
-      const tip = document.getElementById('print-tip');
-      tip.style.display = 'flex';
-      setTimeout(() => window.print(), 400);
-      window.onafterprint = () => tip.style.display = 'none';
-    }
-  </script>
-  <div id="print-tip" style="display:none;align-items:center;gap:10px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.4);border-radius:6px;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;color:rgba(255,255,255,0.8)">
-    <span style="font-size:16px">💡</span>
-    No Chrome: <strong style="color:var(--orange)">Mais configurações → Gráficos de fundo: ativar</strong> · Margens: <strong style="color:var(--orange)">Nenhuma</strong> · Orientação: <strong style="color:var(--orange)">Paisagem</strong>
-  </div>
-</div>
 
 <!-- ════ CAPA ════ -->
 <section id="capa">
