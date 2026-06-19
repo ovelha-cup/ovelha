@@ -21,6 +21,8 @@
     --gray: #8888AA;
     --diamond: #A8EDFF;
     --diamond-glow: #60D4FF;
+    --especial: #C9A4FF;
+    --especial-glow: #B26CFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -631,6 +633,7 @@
   }
 
   .dot-diamond { background: var(--diamond-glow); box-shadow: 0 0 10px var(--diamond-glow); }
+  .dot-especial { background: var(--especial-glow); box-shadow: 0 0 10px var(--especial-glow); }
   .dot-ouro { background: var(--gold); box-shadow: 0 0 10px rgba(255,208,96,0.6); }
   .dot-prata { background: #C0C0C0; }
   .dot-bronze { background: #CD7F32; }
@@ -652,6 +655,7 @@
   }
 
   .cota-label-diamond { background: rgba(96,212,255,0.15); color: var(--diamond-glow); border: 1px solid rgba(96,212,255,0.3); }
+  .cota-label-especial { background: rgba(178,108,255,0.15); color: var(--especial); border: 1px solid rgba(178,108,255,0.3); }
   .cota-label-ouro { background: rgba(255,208,96,0.15); color: var(--gold); border: 1px solid rgba(255,208,96,0.3); }
   .cota-label-prata { background: rgba(192,192,192,0.15); color: #C0C0C0; border: 1px solid rgba(192,192,192,0.3); }
   .cota-label-bronze { background: rgba(205,127,50,0.15); color: #CD7F32; border: 1px solid rgba(205,127,50,0.3); }
@@ -709,11 +713,13 @@
     position: relative;
   }
 
+  .cota-head-especial { background: linear-gradient(160deg, #2a1245, #3d1a66); border-bottom: 2px solid var(--especial-glow); }
   .cota-head-diamond { background: linear-gradient(160deg, #0a1a2e, #0d2040); border-bottom: 2px solid var(--diamond-glow); }
   .cota-head-ouro { background: linear-gradient(160deg, #2a1a00, #3d2800); border-bottom: 2px solid var(--gold); }
   .cota-head-prata { background: linear-gradient(160deg, #1a1a2a, #252535); border-bottom: 2px solid #C0C0C0; }
   .cota-head-bronze { background: linear-gradient(160deg, #1a0f00, #261500); border-bottom: 2px solid #CD7F32; }
 
+  .cota-card-body-especial { background: rgba(34,16,58,0.95); border: 1px solid rgba(178,108,255,0.25); border-top: none; }
   .cota-card-body-diamond { background: rgba(10,26,46,0.95); border: 1px solid rgba(96,212,255,0.2); border-top: none; }
   .cota-card-body-ouro { background: rgba(42,26,0,0.95); border: 1px solid rgba(255,208,96,0.2); border-top: none; }
   .cota-card-body-prata { background: rgba(26,26,42,0.95); border: 1px solid rgba(192,192,192,0.15); border-top: none; }
@@ -732,6 +738,7 @@
     margin-bottom: 6px;
   }
 
+  .title-especial { color: var(--especial); text-shadow: 0 0 20px rgba(178,108,255,0.55); }
   .title-diamond { color: var(--diamond); text-shadow: 0 0 20px rgba(96,212,255,0.5); }
   .title-ouro { color: var(--gold); text-shadow: 0 0 20px rgba(255,208,96,0.5); }
   .title-prata { color: #D0D0D0; }
@@ -749,6 +756,11 @@
     padding: 3px 10px;
     border-radius: 2px;
     margin-bottom: 14px;
+  }
+
+  .cota-badge-especial {
+    background: var(--especial-glow);
+    color: var(--white);
   }
 
   .cota-price {
@@ -803,6 +815,7 @@
     font-size: 10px;
   }
 
+  .check-yes-especial { background: rgba(178,108,255,0.2); color: var(--especial); border: 1px solid rgba(178,108,255,0.45); }
   .check-yes-diamond { background: rgba(96,212,255,0.2); color: var(--diamond-glow); border: 1px solid rgba(96,212,255,0.4); }
   .check-yes-ouro { background: rgba(255,208,96,0.2); color: var(--gold); border: 1px solid rgba(255,208,96,0.4); }
   .check-yes-prata { background: rgba(192,192,192,0.2); color: #C0C0C0; border: 1px solid rgba(192,192,192,0.4); }
@@ -847,7 +860,37 @@
     color: rgba(255,255,255,0.6);
     line-height: 1.7;
     max-width: 600px;
-    margin: 20px auto 56px;
+    margin: 20px auto 28px;
+  }
+
+  .inscricao-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(245,166,35,0.15), rgba(255,107,0,0.12));
+    border: 1px solid rgba(245,166,35,0.45);
+    border-radius: 999px;
+    padding: 12px 26px;
+    margin-bottom: 52px;
+    box-shadow: 0 0 30px rgba(245,166,35,0.15);
+  }
+
+  .inscricao-icon { font-size: 20px; line-height: 1; }
+
+  .inscricao-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .inscricao-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--orange);
   }
 
   .contato-cards {
@@ -965,6 +1008,10 @@
     .cat-grid { grid-template-columns: 1fr; }
     .print-bar { flex-wrap: wrap; gap: 8px; }
     .evento-stats { grid-template-columns: 1fr 1fr; }
+    .contato-card { flex-direction: column; text-align: center; gap: 12px; }
+    .inscricao-badge { flex-direction: column; gap: 6px; text-align: center; }
+    .footer-logos { flex-direction: column; gap: 18px; }
+    .footer-divider { display: none; }
   }
 
   /* ─── CAPA FOTO ─── */
@@ -1324,7 +1371,7 @@
       </div>
       <div class="capa-info-item">
         <span class="capa-info-label">Premiação</span>
-        <span class="capa-info-value">R$ 5.700</span>
+        <span class="capa-info-value">R$ 5.000</span>
       </div>
     </div>
   </div>
@@ -1356,7 +1403,7 @@
 
     <div class="evento-stats">
       <div class="stat-card">
-        <div class="stat-number">5</div>
+        <div class="stat-number">4</div>
         <div class="stat-label">Categorias</div>
       </div>
       <div class="stat-card">
@@ -1512,7 +1559,7 @@
       <h2 class="section-title">Categorias & <span>Premiação</span></h2>
       <div class="premio-total">
         <span class="premio-total-label">Premiação total</span>
-        <span class="premio-total-value">R$ 5.700</span>
+        <span class="premio-total-value">R$ 5.000</span>
       </div>
     </div>
 
@@ -1664,9 +1711,9 @@
             <span class="vis-item-cota cota-label-ouro">Ouro</span>
           </li>
           <li class="vis-item">
-            <span class="vis-item-dot dot-diamond"></span>
+            <span class="vis-item-dot dot-especial"></span>
             <span class="vis-item-text">Logo <strong>atrás (parte de cima)</strong> da camisa</span>
-            <span class="vis-item-cota cota-label-diamond">Diamante</span>
+            <span class="vis-item-cota cota-label-especial">Especial</span>
           </li>
           <li class="vis-item">
             <span class="vis-item-dot dot-prata"></span>
@@ -1684,9 +1731,9 @@
         <div class="vis-block-sub">Aplicação nos backdrops de entrevista e pódio</div>
         <ul class="vis-items">
           <li class="vis-item">
-            <span class="vis-item-dot dot-diamond"></span>
+            <span class="vis-item-dot dot-especial"></span>
             <span class="vis-item-text">Posição de destaque no backdrop do <strong>pódio</strong></span>
-            <span class="vis-item-cota cota-label-diamond">Diamante</span>
+            <span class="vis-item-cota cota-label-especial">Especial</span>
           </li>
           <li class="vis-item">
             <span class="vis-item-dot dot-ouro"></span>
@@ -1829,51 +1876,27 @@
 
     <div class="cotas-grid">
 
-      <!-- DIAMANTE -->
-      <div class="cota-card featured">
-        <div class="cota-head cota-head-diamond">
-          <span class="cota-gem">💎</span>
-          <div class="cota-badge-featured">Mais Completo</div>
-          <div class="cota-title title-diamond">Diamante</div>
-          <div class="cota-price">
-            <div class="cota-price-label">Investimento</div>
-            <div class="cota-price-value">R$ 1.200</div>
-          </div>
-        </div>
-        <div class="cota-card-body cota-card-body-diamond">
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo na frente da camisa</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo atrás da camisa (cima)</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo atrás da camisa (baixo)</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo no backdrop do pódio (destaque)</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Logo no backdrop de entrevista</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Menção nas transmissões ao vivo</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Postagens nas redes sociais</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Ativação no local do evento</div>
-          <div class="benefit-row"><div class="check check-yes-diamond">✓</div> Presença em materiais de mídia</div>
-        </div>
-      </div>
-
-      <!-- OURO -->
+      <!-- BRONZE -->
       <div class="cota-card">
-        <div class="cota-head cota-head-ouro">
-          <span class="cota-gem">🥇</span>
+        <div class="cota-head cota-head-bronze">
+          <span class="cota-gem">🥉</span>
           <div style="height:22px"></div>
-          <div class="cota-title title-ouro">Ouro</div>
+          <div class="cota-title title-bronze">Bronze</div>
           <div class="cota-price">
             <div class="cota-price-label">Investimento</div>
-            <div class="cota-price-value">R$ 8.000</div>
+            <div class="cota-price-value">R$ 500</div>
           </div>
         </div>
-        <div class="cota-card-body cota-card-body-ouro">
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo na frente da camisa</div>
+        <div class="cota-card-body cota-card-body-bronze">
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo na frente da camisa</div>
           <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (cima)</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo atrás da camisa (baixo)</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop do pódio</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop de entrevista</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Menção nas transmissões ao vivo</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Postagens nas redes sociais</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Ativação no local do evento</div>
-          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Presença em materiais de mídia</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo no backdrop do pódio (destaque)</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Logo no backdrop (posição inferior)</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row inactive"><div class="check check-no">–</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Presença em materiais de mídia</div>
         </div>
       </div>
 
@@ -1885,7 +1908,7 @@
           <div class="cota-title title-prata">Prata</div>
           <div class="cota-price">
             <div class="cota-price-label">Investimento</div>
-            <div class="cota-price-value">R$ 4.000</div>
+            <div class="cota-price-value">R$ 2.500</div>
           </div>
         </div>
         <div class="cota-card-body cota-card-body-prata">
@@ -1901,27 +1924,52 @@
         </div>
       </div>
 
-      <!-- BRONZE -->
+      <!-- OURO -->
       <div class="cota-card">
-        <div class="cota-head cota-head-bronze">
-          <span class="cota-gem">🥉</span>
+        <div class="cota-head cota-head-ouro">
+          <span class="cota-gem">🥇</span>
           <div style="height:22px"></div>
-          <div class="cota-title title-bronze">Bronze</div>
+          <div class="cota-title title-ouro">Ouro</div>
           <div class="cota-price">
             <div class="cota-price-label">Investimento</div>
-            <div class="cota-price-value">R$ 1.000</div>
+            <div class="cota-price-value">R$ 5.000</div>
           </div>
         </div>
-        <div class="cota-card-body cota-card-body-bronze">
-          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo na frente da camisa</div>
+        <div class="cota-card-body cota-card-body-ouro">
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo na frente da camisa</div>
           <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (cima)</div>
-          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo atrás da camisa (baixo)</div>
-          <div class="benefit-row inactive"><div class="check check-no">–</div> Logo no backdrop do pódio (destaque)</div>
-          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Logo no backdrop (posição inferior)</div>
-          <div class="benefit-row inactive"><div class="check check-no">–</div> Menção nas transmissões ao vivo</div>
-          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Postagens nas redes sociais</div>
-          <div class="benefit-row inactive"><div class="check check-no">–</div> Ativação no local do evento</div>
-          <div class="benefit-row"><div class="check check-yes-bronze">✓</div> Presença em materiais de mídia</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop do pódio</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Logo no backdrop de entrevista</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-ouro">✓</div> Presença em materiais de mídia</div>
+        </div>
+      </div>
+
+      <!-- ESPECIAL -->
+      <div class="cota-card featured">
+        <div class="cota-head cota-head-especial">
+          <span class="cota-gem">👑</span>
+          <div class="cota-badge-featured cota-badge-especial">Naming Rights</div>
+          <div class="cota-title title-especial">Especial</div>
+          <div class="cota-price">
+            <div class="cota-price-label">Investimento</div>
+            <div class="cota-price-value">Sob consulta</div>
+          </div>
+        </div>
+        <div class="cota-card-body cota-card-body-especial">
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> <strong>Nome do evento associado à sua empresa</strong></div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Logo na frente da camisa</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Logo atrás da camisa (cima)</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Logo atrás da camisa (baixo)</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Logo no backdrop do pódio (destaque)</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Logo no backdrop de entrevista</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Menção nas transmissões ao vivo</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Postagens nas redes sociais</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Ativação no local do evento</div>
+          <div class="benefit-row"><div class="check check-yes-especial">✓</div> Presença em materiais de mídia</div>
         </div>
       </div>
 
@@ -1950,9 +1998,15 @@
       Seja parceiro do Ovelha Cup e associe sua marca a um evento esportivo de alto impacto, com transmissão ao vivo, público apaixonado e cobertura completa de mídia.
     </p>
 
+    <div class="inscricao-badge">
+      <span class="inscricao-icon">🎟️</span>
+      <span class="inscricao-label">Inscrição por atleta</span>
+      <span class="inscricao-value">R$ 300</span>
+    </div>
+
     <div class="contato-cards">
-      <a class="contato-card" href="tel:+5579991910833">
-        <div class="contato-card-icon">📞</div>
+      <a class="contato-card" href="https://wa.me/5579991910833" target="_blank" rel="noopener">
+        <div class="contato-card-icon">💬</div>
         <div>
           <div class="contato-card-label">Telefone / WhatsApp</div>
           <div class="contato-card-value">(79) 99191-0833</div>
@@ -1965,11 +2019,11 @@
           <div class="contato-card-value">@OVELHATV</div>
         </div>
       </a>
-      <a class="contato-card" href="mailto:ovelha.ftv@hotmail.com">
+      <a class="contato-card" href="mailto:marketingovelhaftv@gmail.com">
         <div class="contato-card-icon">✉️</div>
         <div>
           <div class="contato-card-label">E-mail</div>
-          <div class="contato-card-value">ovelha.ftv@hotmail.com</div>
+          <div class="contato-card-value">Marketingovelhaftv@gmail.com</div>
         </div>
       </a>
       <div class="contato-card">
@@ -1983,7 +2037,7 @@
 
     <div class="footer-logos">
       <div class="footer-logo-text">OVELHA <span>CUP</span></div>
-      <div style="width:1px;height:30px;background:rgba(255,255,255,0.15)"></div>
+      <div class="footer-divider" style="width:1px;height:30px;background:rgba(255,255,255,0.15)"></div>
       <div class="footer-logo-text">OVELHA <span>FUTEVÔLEI</span></div>
     </div>
   </div>
