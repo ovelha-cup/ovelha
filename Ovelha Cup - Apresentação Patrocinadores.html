@@ -309,24 +309,43 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   .diff-list li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 14px;
     font-size: 15px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.45;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,166,35,0.18);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+
+  .diff-list li:hover {
+    border-color: rgba(245,166,35,0.5);
+    background: rgba(245,166,35,0.06);
+    transform: translateX(4px);
   }
 
   .diff-list li::before {
-    content: '▸';
+    content: '✓';
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.4);
     color: var(--orange);
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    margin-top: 1px;
   }
 
   .evento-stats {
@@ -1713,7 +1732,7 @@
           </li>
           <li class="vis-item">
             <span class="vis-item-dot dot-especial"></span>
-            <span class="vis-item-text">Logo <strong>atrás (parte de cima)</strong> da camisa</span>
+            <span class="vis-item-text">Logo na <strong>frente (parte de cima)</strong> da camisa</span>
             <span class="vis-item-cota cota-label-especial">Especial</span>
           </li>
           <li class="vis-item">
@@ -2001,7 +2020,7 @@
 
     <div class="inscricao-badge">
       <span class="inscricao-icon">🎟️</span>
-      <span class="inscricao-label">Inscrição por atleta</span>
+      <span class="inscricao-label">Inscrição por dupla</span>
       <span class="inscricao-value">R$ 300</span>
     </div>
 
